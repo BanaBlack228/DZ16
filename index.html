@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>DZ16</title>
+</head>
+<style>
+    .description { color: black; }
+    .red { color: red; }
+    .item { padding: 10px; border: 3px solid black; margin: 50px;}
+    .active { background-color: rgb(0, 255, 179); }
+    .list-item { padding: 6px; }
+    .highlight { background-color: rgb(255, 38, 0); margin: 70px;}
+    .title { font-size: 13px; }
+    .button { color: rgb(0, 0, 0); }
+    .Perple { color: rgb(117, 2, 100); }
+
+
+    </style>
+    
+<body>
+
+<h1 align="center">Задача №1</h1>
+<h3 class="header" id="header">Заголовок</h3>
+<button align="center" id="changeText">Изменить текст</button>
+
+<h1 align="center">Задача №2</h1>
+<p class="description">Это описание.</p>
+<button id="changeColor">Изменить цвет</button>
+
+<h1 align="center">Задача №3</h1>
+<input type="text" id="username" placeholder="Введите имя">
+<button id="showValue">Показать значение</button>
+
+<h1 align="center">Задача №4</h1>
+<button id="submit">Отправить</button>
+<button id="changeButtonText">Изменить текст</button>
+
+<h1 align="center">Задача №5</h1>
+<div class="item">Элемент 1</div>
+<button id="activateItem">Активировать элемент</button>
+
+<h1 align="center">Задача №6</h1>
+<p id="message">Ввел текст</p>
+<button id="setMessage">Установить сообщение</button>
+
+<h1 align="center">Задача №7</h1>
+<ul>
+    <li class="list-item">Элемент 1</li>
+    <li class="list-item">Элемент 2</li>
+    <li class="list-item">Элемент 3</li>
+    </ul>
+    <button id="highlightList">Выделить элементы списка</button>
+
+<h1 align="center">Задача №8</h1>
+<img id="image" src="image/4ec34b1cdd4055d69f23e5a9a9d4d402.jpg" alt="Изображение">
+<button id="changeImage">Изменить изображение</button>
+
+<h1 align="center">Задача №9</h1>
+<p class="counter" id="counter">0</p>
+<button id="increment">Увеличить счетчик</button>
+
+<h1 align="center">Задача №10</h1>
+<h2 class="title" id="title">Заголовок</h2>
+<button id="increaseFontSize">Увеличить размер шрифта</button>
+
+<h1 align="center">Задача №11</h1>
+<button class="button">Кнопка 1</button>
+<button class="button">Кнопка 2</button>
+<button id="changeButtonColor">Изменить цвет текста кнопок</button>
+<script>
+document.getElementById('changeText').addEventListener('click', function() {
+document.getElementById('header').textContent = 'Измененный текст';
+});
+
+document.getElementById('changeColor').addEventListener('click', function() {
+document.querySelector('.description').classList.add('red');
+});
+
+document.getElementById('showValue').addEventListener('click', function() {
+const value = document.getElementById('username').value;
+alert(value);
+});
+
+document.getElementById('changeButtonText').addEventListener('click', function()
+{
+document.getElementById('submit').textContent = 'Отправлено';
+});
+
+document.getElementById('activateItem').addEventListener('click', function() {
+document.querySelector('.item').classList.add('active');
+});
+
+document.getElementById('setMessage').addEventListener('click', function() {
+document.getElementById('message').textContent = 'Успешно выполнено!';
+});
+
+document.getElementById('highlightList').addEventListener('click', function() {
+document.querySelectorAll('.list-item').forEach(item => {
+item.classList.add('highlight');
+});
+});
+
+document.getElementById('changeImage').addEventListener('click', function() {
+document.getElementById('image').src = 'image/938c506a382baec900d05ad77f1e6007.jpg';
+});
+
+document.getElementById('increment').addEventListener('click', function() {
+const counterElement = document.getElementById('counter');
+let count = parseInt(counterElement.textContent);
+count++;
+counterElement.textContent = count;
+});
+
+document.getElementById('increaseFontSize').addEventListener('click', function()
+{
+document.getElementById('title').style.fontSize = '30px';
+});
+
+document.getElementById('changeButtonColor').addEventListener('click',
+function() {
+document.querySelectorAll('.button').forEach(button => {
+button.classList.add('Perple');
+});
+});
+
+</script>
+</body>
+</html>
